@@ -1,0 +1,1 @@
+export default function Loading(){return <div className="container page-pad"><div className="spinner"/><p className="center muted">Finding your creative space…</p></div>}
