@@ -1,0 +1,2 @@
+import Guard from '@/components/Guard';import StudioForm from '@/components/StudioForm';export const metadata={title:'Add New Studio'};
+export default function AddStudio(){return <Guard><div className="container edit-page"><div className="eyebrow"><span className="dot"/> FOR THE HOSTS</div><h1>Every space has <em>a story.</em></h1><p className="lead">Show the creative community what makes yours special.</p><StudioForm/></div></Guard>}
