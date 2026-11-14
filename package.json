@@ -1,0 +1,16 @@
+{
+  "name": "studiospace-client",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {"dev": "next dev", "build": "next build", "start": "next start"},
+  "dependencies": {
+    "better-auth": "^1.7.23",
+    "lucide-react": "^0.468.0",
+    "next": "^15.5.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sonner": "^2.0.0",
+    "swiper": "^12.0.0"
+  },
+  "devDependencies": {}
+}
