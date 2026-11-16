@@ -1,6 +1,6 @@
 # StudioSpace — Client
 
-**Live website URL:** `NOT DEPLOYED — add your Vercel URL after deployment`
+**Production website:** https://studiospace-client-phi.vercel.app
 
 ## Website features
 
@@ -28,7 +28,7 @@ npm run dev
 
 - App: http://localhost:3000
 - Backend: run sibling `server` project at http://localhost:5000 first.
-- `NEXT_PUBLIC_API_URL` must match the API host.
+- `BACKEND_URL` must point to the Express API (for local development, `http://localhost:5000`; in Vercel, set the Render service URL).
 - Build check: `npm run build` (run after dependencies install).
 
 ## Examiner credentials
