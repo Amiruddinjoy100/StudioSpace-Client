@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -65,8 +64,30 @@ export default function Providers({ children }) {
           setAuthReady(true);
         }
       })
-      .catch((error) => {
+      .catch(async (error) => {
         if (cancelled) return;
+
+        // "Not signed in" errors are expected right after registering,
+        // because the register page signs the user out straight away.
+        const notSignedIn =
+          error?.status === 401 ||
+          /sign in/i.test(error?.message || "");
+
+        if (notSignedIn) {
+          // Wait a moment, then check if the user is really signed in.
+          await new Promise((resolve) => setTimeout(resolve, 800));
+
+          if (cancelled) return;
+
+          const { data } = await authClient.getSession();
+
+          if (cancelled) return;
+
+          if (!data?.user) {
+            setAuthReady(true);
+            return;
+          }
+        }
 
         console.error(
           "[Auth] API session initialization failed:",
